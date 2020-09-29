@@ -1,0 +1,38 @@
+gce:
+  vm_instances:
+    e2:
+      desc: |
+        E2 instances do not offer sustained use discounts but provide larger
+        savings directly through the on-demand and committed-use prices.
+      vcpu:
+        unit: vcpu-hour
+        prices:
+          ondemand: 0.021811
+          preempt: 0.006543
+          reserve1: 0.013741
+          reserve3: 0.009815
+      memory:
+        unit: gb-hour
+        prices:
+          ondemand: 0.002923
+          preempt: 0.000877
+          reserve1: 0.001842
+          reserve3: 0.001316
+    n2:
+      desc: ""
+      vcpu:
+        unit: vcpu-hour
+        prices:
+          ondemand: 0.031611
+          preempt: 0.00765
+          reserve1: 0.019915
+          reserve3: 0.014225
+      memory:
+        unit: gb-hour
+        prices:
+          ondemand: 0.004237
+          preempt: 0.00103
+          reserve1: 0.002669
+          reserve3: 0.001907
+
+
