@@ -1,5 +1,15 @@
-import React from "react"
+import React, { Component } from "react"
+import GCECalculator from "../components/gce"
 
-export default function Home() {
-  return <div>Hello world!</div>
+class HomePage extends Component {
+  render() {
+    return (
+      <div>
+        <GCECalculator />
+        <GCECalculator />
+      </div>
+    )
+  }
 }
+
+export default HomePage
