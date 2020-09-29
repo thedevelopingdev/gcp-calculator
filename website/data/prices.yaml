@@ -9,6 +9,8 @@ gcp_prices:
       broadwell:
       rome:
     vm_instances:
+      # machine types: https://archive.vn/pSbQ6
+      # 
       shared:
         e2micro:
           desc: |
