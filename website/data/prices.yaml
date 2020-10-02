@@ -1,3 +1,4 @@
+# https://cloud.google.com/billing/docs/reference/rest/v1/services.skus/list
 gcp_prices:
   gce:
     cpu_platforms:
@@ -128,5 +129,15 @@ gcp_prices:
               preempt: 0.000892
               reserve1: 0.002322
               reserve3: 0.001659
+  vpc:
+    # gcloud compute addresses list
+    external_ip:
+      unit: hour
+      unused: 0.010
+      ondemand: 0.004
+      preempt: 0.002
+      forwarding: 0
+  storage:
+  bigquery:
 
 
