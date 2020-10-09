@@ -1,0 +1,178 @@
+# https://cloud.google.com/billing/docs/reference/rest/v1/services.skus/list
+gcp_prices:
+  gce:
+    disks:
+      zonal_standard_pd:
+        price: 0.04
+        unit: GB-month
+      local_ssd:
+        ondemand:
+          price: 0.08
+          unit: GB-month
+        preempt:
+          price: 0.048
+          unit: GB-month
+    cpu_platforms:
+      cascadelake:
+      skylake:
+      sandybridge:
+      ivybridge:
+      haswell:
+      broadwell:
+      rome:
+    vm_instances:
+      # machine types: https://archive.vn/pSbQ6
+      shared:
+        e2micro:
+          desc: |
+           Two vCPUs are exposed to the guest operating system, but each one
+           is only running for 0.25 of total CPU time (as controlled and
+           viewed by the host).
+          vcpus: 2
+          fraction: 0.25
+          memory: 1
+          prices:
+            ondemand: 0.008376
+            preempt: 0.002513
+            reserve1: 0.00528
+            reserve3: 0.00377
+
+        e2small:
+          vcpus: 2
+          fraction: 0.5
+          memory: 2
+          prices:
+            ondemand: 0.016751
+            preempt: 0.005025
+            reserve1: 0.01055
+            reserve3: 0.00754
+
+        e2medium:
+          vcpus: 2
+          fraction: 1
+          memory: 4
+          prices:
+            ondemand: 0.033503
+            preempt: 0.010051
+            reserve1: 0.02111
+            reserve3: 0.01508
+
+        f1micro:
+          vcpus: 1
+          fraction: 0.2
+          memory: 0.6
+          prices:
+            ondemand: 0.0088644
+            preempt: 0.0018662
+
+        g1small:
+          vcpus: 1
+          fraction: 0.5
+          memory: 1.7
+          prices:
+            ondemand: 0.0230084
+            preempt: 0.0048439
+
+      general:
+        e2:
+          desc: |
+            E2 instances do not offer sustained use discounts but provide larger
+            savings directly through the on-demand and committed-use prices.
+          vcpu:
+            unit: vcpu-hour
+            max: 32
+            prices:
+              ondemand: 0.021811
+              preempt: 0.006543
+              reserve1: 0.013741
+              reserve3: 0.009815
+          memory:
+            unit: gb-hour
+            max: 128
+            maxPerCPU: 8
+            prices:
+              ondemand: 0.002923
+              preempt: 0.000877
+              reserve1: 0.001842
+              reserve3: 0.001316
+          cpu_platforms:
+            - skylake
+            - broadwell
+            - haswell
+            - rome
+        n2:
+          desc: ""
+          vcpu:
+            max: 80
+            unit: vcpu-hour
+            prices:
+              ondemand: 0.031611
+              preempt: 0.00765
+              reserve1: 0.019915
+              reserve3: 0.014225
+          memory:
+            max: 640
+            maxPerCPU: 8
+            unit: gb-hour
+            prices:
+              ondemand: 0.004237
+              preempt: 0.00103
+              reserve1: 0.002669
+              reserve3: 0.001907
+        n2d:
+          desc: |
+            AMD EPYC Rome
+          vcpu:
+            max: 224
+            unit: vcpu-hour
+            prices:
+              ondemand: 0.027502
+              preempt: 0.006655 
+              reserve1: 0.017326
+              reserve3: 0.012376
+          memory:
+            unit: gb-hour
+            max: 1792
+            maxPerCPU: 8
+            prices:
+              ondemand: 0.003686
+              preempt: 0.000892
+              reserve1: 0.002322
+              reserve3: 0.001659
+  vpc:
+    # gcloud compute addresses list
+    external_ip:
+      unit: hour
+      unused: 0.010
+      ondemand: 0.004
+      preempt: 0.002
+      forwarding: 0
+  storage:
+    storage:
+      standard:
+        price: 0.02
+        unit: GB-month
+      nearline:
+        price: 0.01
+        unit: GB-month
+      coldline:
+        price: 0.004
+        unit: GB-month
+      archive:
+        price: 0.0012
+        unit: GB-month
+    retrieval:
+      standard:
+      nearline:
+      coldline:
+      archive:
+    operations:
+      standard:
+      nearline:
+      coldline:
+      archive:
+    network:
+  bigquery:
+
+
+
